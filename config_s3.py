@@ -6,9 +6,10 @@ from data_process import *
 
 load_dotenv()
 
-#Connection of S3
+#Connection S3 with environment credentials
 s3 = boto3.client('s3', aws_access_key_id = os.getenv('AWS_ACCESS_KEY_ID') ,aws_secret_access_key = os.getenv('AWS_SECRET_ACCESS_KEY'))
 
+#Method to upload the files we have in the folder addresses to S3
 def upload_file(s3):
     file_names = os.listdir(os.getenv('FOLDER_PATH'))
     for file_name in file_names:
@@ -20,10 +21,12 @@ def upload_file(s3):
         except:
             print('No se encontraron credenciales de AWS')
 
+#Method to get the files we have in the S3 bucket
 def obtain_files(s3):
     files_s3 = s3.list_objects_v2(Bucket=os.getenv('BUCKET_NAME'))
     return files_s3
 
+#Method to read the files we have in S3 bucket
 def read_files(df):
     files_s3 = obtain_files(s3)
     for obj in files_s3.get('Contents', []):
