@@ -30,3 +30,23 @@ Libreria que nos ayuda a dibujar el mapa
 pip install python-dotenv
 ```
 Manejo de variables de entorno
+
+### Proceso 🔧
+
+Si se desea ejecutar con archivos planos diferentes se debe agregar en la carpeta "Addresses" más archivos planos con direcciones
+Se ejecuta el "main" GPB.py no deben de configurar nada más.
+
+### Construido con 🛠️
+
+Visual Studio 
+Jupyter Notebook 
+Python 
+
+## Autor ✒️
+
+Anderson Felipe Peña Ocampo - Trabajo Inicial - Penhaldev
+Anderson Felipe Peña Ocampo - Documentación - Penhaldev
+
+## Confidencialidad 
+
+Luego de ser revisado esté proyecto se eliminará
