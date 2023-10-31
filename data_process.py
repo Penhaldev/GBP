@@ -1,6 +1,7 @@
 from config_google import *
 from thefuzz import fuzz, process
 
+#Method that passes as a parameter the address extracted from the file in the bucket and gives us alternative addresses as indicated in the document.
 def alternate_address(address):
     addresses = []
     if address[4] == '-':
@@ -23,6 +24,7 @@ def alternate_address(address):
 
     return addresses
 
+#Method that calculates the % of coincidence with the original address if it is greater or equal to 90% it adds it to a dataframe, the dataframe will be our data storage source.
 def calculate_percentage(original_address,df):
     address = original_address
     addresses = alternate_address(address)
@@ -32,7 +34,8 @@ def calculate_percentage(original_address,df):
         ratio = fuzz.partial_ratio(temporal.lower(),temporal_address.lower())
         if ratio >= 90:
             df.loc[len(df)] = temporal_address.strip()
-        
+
+#Method that adds to the dataframe the coordinates of the addresses that gave us a % greater than or equal to 90       
 def add_coordinates_df(df):
     df['LAT'] = None
     df['LON'] = None
