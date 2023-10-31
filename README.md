@@ -55,4 +55,4 @@ Luego de ser revisado esté proyecto se eliminará
 
 Se desarrolla también en Jupyter Notebook es una aplicación web de código abierto. Cada desarrollador puede dividir el código en partes y trabajar en ellas sin importar el orden, escribir, probar funciones, cargar un archivo en la memoria y procesar el contenido.
 
-Se deja en la raiz archivo con extensión GBP.html
+Se deja en la raiz archivo con nombre GBP.html
