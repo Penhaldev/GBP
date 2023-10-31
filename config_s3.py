@@ -9,7 +9,6 @@ load_dotenv()
 #Connection of S3
 s3 = boto3.client('s3', aws_access_key_id = os.getenv('AWS_ACCESS_KEY_ID') ,aws_secret_access_key = os.getenv('AWS_SECRET_ACCESS_KEY'))
 
-
 def upload_file(s3):
     file_names = os.listdir(os.getenv('FOLDER_PATH'))
     for file_name in file_names:
@@ -20,7 +19,6 @@ def upload_file(s3):
             print(f'El archivo {os.getenv('FOLDER_PATH')}/{file_name} no se encontró')
         except:
             print('No se encontraron credenciales de AWS')
-
 
 def obtain_files(s3):
     files_s3 = s3.list_objects_v2(Bucket=os.getenv('BUCKET_NAME'))

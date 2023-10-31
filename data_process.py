@@ -1,7 +1,6 @@
 from config_google import *
 from thefuzz import fuzz, process
 
-
 def alternate_address(address):
     addresses = []
     if address[4] == '-':
