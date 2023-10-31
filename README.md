@@ -29,7 +29,7 @@ Libreria que nos ayuda a dibujar el mapa
 ```
 pip install python-dotenv
 ```
-Manejo de variables de entorno
+Configuración variables de entorno para las conexiones
 
 ### Proceso 🔧
 
